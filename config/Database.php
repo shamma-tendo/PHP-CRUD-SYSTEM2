@@ -26,5 +26,14 @@ class Database {
         
         return $this->conn;
     }
+    public function cleanTable($table = 'students') {
+        $conn = $this->getConnection();
+        try {
+            $conn->exec("TRUNCATE TABLE $table"); // Clears all data and resets auto-increment
+            return true;
+        } catch(PDOException $e) {
+            die("Clean failed: " . $e->getMessage());
+        }
+    }
 }
 ?>

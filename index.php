@@ -28,6 +28,7 @@ $result = $student->read();
                 <tr>
                     <th>No.</th> <!-- Changed from ID to No. for sequential numbering -->
                     <th>Name</th>
+                    <th>Registration Number</th>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Course</th>
@@ -41,6 +42,7 @@ $result = $student->read();
                 <tr>
                     <td><?php echo $counter++; // Display sequential number instead of $row['id'] ?></td>
                     <td><?php echo htmlspecialchars($row['first_name'] . ' ' . $row['last_name']); ?></td>
+                    <td><?php echo htmlspecialchars($row['registration_number']); ?></td>
                     <td><?php echo htmlspecialchars($row['email']); ?></td>
                     <td><?php echo htmlspecialchars($row['phone']); ?></td>
                     <td><?php echo htmlspecialchars($row['course']); ?></td>
